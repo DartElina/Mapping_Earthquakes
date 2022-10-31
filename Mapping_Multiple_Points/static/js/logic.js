@@ -1,13 +1,19 @@
 // Add console.log to check to see if our code is working.
 console.log("working");
-
-var map = L.map('map').setView([40.7, -94.5], 4);
-
+// add map to page
+var map = L.map('map').setView([34.0522, -118.2437], 14);
+// add marker to map
+var circle = L.circleMarker([34.0522, -118.2437], {
+    color: 'black',
+    fillColor: 'yellow',
+    fillOpacity: 0.7,
+    radius: 300
+ }).addTo(map);
 // We create the tile layer that will be the background of our map.
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
-    id: 'mapbox/streets-v11',
+    id: 'mapbox/dark-v10',
     tileSize: 512,
     zoomOffset: -1,
     accessToken: API_KEY
